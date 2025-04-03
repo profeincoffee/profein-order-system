@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profein Order System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .menu-item {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            width: 200px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .menu-item:hover {
+            background: #ffeb99;
+        }
+        .selected {
+            background: #ffcc00 !important;
+        }
+        .total {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profein Order System</h1>
+
+    <div id="menu"></div>
+    
+    <div class="total">Total: $<span id="total">0.00</span></div>
+
+    <script>
+        let total = 0;
+
+        async function loadMenu() {
+            const response = await fetch('menu.json');
+            const menu = await response.json();
+
+            const menuContainer = document.getElementById("menu");
+            menuContainer.innerHTML = "";
+
+            Object.keys(menu).forEach(category => {
+                const section = document.createElement("div");
+                section.classList.add("menu-section");
+                section.innerHTML = `<h2>${category}</h2>`;
+
+                const itemsContainer = document.createElement("div");
+                itemsContainer.classList.add("menu-container");
+
+                menu[category].forEach(item => {
+                    const div = document.createElement("div");
+                    div.classList.add("menu-item");
+                    div.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                    div.addEventListener("click", () => {
+                        if (div.classList.contains("selected")) {
+                            div.classList.remove("selected");
+                            total -= item.price;
+                        } else {
+                            div.classList.add("selected");
+                            total += item.price;
+                        }
+                        updateTotal();
+                    });
+                    itemsContainer.appendChild(div);
+                });
+
+                section.appendChild(itemsContainer);
+                menuContainer.appendChild(section);
+            });
+        }
+
+        function updateTotal() {
+            document.getElementById("total").textContent = total.toFixed(2);
+        }
+
+        loadMenu();
+    </script>
+</body>
+</html>
