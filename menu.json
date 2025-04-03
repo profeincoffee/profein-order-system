@@ -1,0 +1,41 @@
+{
+    "Specialty Drinks (No Protein)": [
+        { "name": "Cinnamon Toast Espresso", "price": 7.50 },
+        { "name": "La Chaparra", "price": 7.50 },
+        { "name": "Cajeta Espresso", "price": 7.50 },
+        { "name": "Nutella Espresso", "price": 7.50 },
+        { "name": "La Rosa", "price": 7.50 }
+    ],
+    "Lattes (No Protein)": [
+        { "name": "White Chocolate Mocha", "price": 7.50 },
+        { "name": "Caramel", "price": 7.50 },
+        { "name": "Mocha", "price": 7.50 },
+        { "name": "Vanilla", "price": 7.50 },
+        { "name": "Hazelnut", "price": 7.50 },
+        { "name": "Matcha", "price": 7.50 }
+    ],
+    "Espresso (No Protein)": [
+        { "name": "Americano", "price": 5.00 },
+        { "name": "Espresso Shots", "price": 3.00 }
+    ],
+    "Protein Lattes (PROFEIN Menu)": [
+        { "name": "Cinnamon Toast Espresso", "price": 7.50 },
+        { "name": "Cajeta Espresso", "price": 7.50 },
+        { "name": "Nutella Espresso", "price": 7.50 },
+        { "name": "La Chaparra", "price": 7.50 }
+    ],
+    "Protein Coffee To-Go": [
+        { "name": "El OG", "price": 6.00 },
+        { "name": "El Amargado", "price": 6.00 },
+        { "name": "ChocoFit", "price": 6.00 },
+        { "name": "NSA", "price": 6.00 },
+        { "name": "Jitter Free", "price": 6.00 }
+    ],
+    "Add-Ons": [
+        { "name": "2% Milk", "price": 0.00 },
+        { "name": "Whole Milk", "price": 0.00 },
+        { "name": "Oat Milk", "price": 0.80 },
+        { "name": "Almond Milk", "price": 0.80 },
+        { "name": "Extra Shot", "price": 1.50 }
+    ]
+}
